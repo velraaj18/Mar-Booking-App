@@ -11,7 +11,7 @@ import PlaceForm from "./Pages/PlaceForm";
 import SinglePlacePage from "./Pages/SinglePlacePage";
 import SingleBookingPage from "./Pages/SingleBookingPage";
 
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = import.meta.env.API_BASE_URL;
 axios.defaults.withCredentials = true;
 
 const App = () => {
