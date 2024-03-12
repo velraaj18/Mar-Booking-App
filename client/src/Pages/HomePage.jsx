@@ -20,7 +20,7 @@ const HomePage = () => {
             className=" bg-gray-100 rounded-2xl cursor-pointer"
           >
             <div className="  mb-2 rounded-2xl">
-              {place.photos.length > 0 && (
+              {place.photos?.[0] && (
                 <Images
                   className=" aspect-square object-cover grow shrink-0 rounded-2xl"
                   src={place.photos[0]}
