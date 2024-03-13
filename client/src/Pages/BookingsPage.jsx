@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import Images from "./Images";
 
 const BookingsPage = () => {
   const [bookings, setBookings] = useState([]);
@@ -22,11 +23,9 @@ const BookingsPage = () => {
               key={index}
             >
               {booking.place.photos.length > 0 && (
-                <img
+                <Images
                   className=" w-52 h-40 object-cover"
-                  src={
-                    "http://localhost:4000/uploads/" + booking.place.photos[0]
-                  }
+                  src={booking.place.photos[0]}
                   alt=""
                   srcset=""
                 />

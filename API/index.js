@@ -155,9 +155,8 @@ app.post("/logout", (req, res) => {
 
 //to post the new image using link.
 app.post("/upload-by-link", async (req, res) => {
-  mongoose.connect(process.env.MONGODB);
   const { link } = req.body;
-  const newName = Date.now() + ".jpg";
+  const newName = "photo" + Date.now() + ".jpg";
   await imageDownloader.image({
     url: link,
     dest: "/tmp/" + newName, //__dirname => full directory path of the folder.
@@ -179,7 +178,6 @@ app.post("/upload-by-link", async (req, res) => {
 const photoMiddleware = multer({ dest: "/tmp" });
 // to post the new image from the computer.
 app.post("/upload", photoMiddleware.array("photos", 100), async (req, res) => {
-  mongoose.connect(process.env.MONGODB);
   const uploadPhotos = [];
   for (let index = 0; index < req.files.length; index++) {
     const { path, originalname, mimetype } = req.files[index];
@@ -247,6 +245,7 @@ app.get("/place/:id", async (req, res) => {
   const { id } = req.params;
   const places = await PageModel.findById(id);
   res.status(200).send(places);
+  console.log(places);
 });
 
 app.put("/place", async (req, res) => {
