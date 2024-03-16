@@ -286,7 +286,7 @@ app.put("/place", async (req, res) => {
   });
 });
 
-app.get("/place", async (req, res) => {
+app.get("/", async (req, res) => {
   mongoose.connect(process.env.MONGODB);
   const places = await PageModel.find();
   res.status(200).send(places);
