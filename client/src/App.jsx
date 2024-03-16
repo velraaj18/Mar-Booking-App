@@ -11,7 +11,7 @@ import PlaceForm from "./Pages/PlaceForm";
 import SinglePlacePage from "./Pages/SinglePlacePage";
 import SingleBookingPage from "./Pages/SingleBookingPage";
 
-axios.defaults.baseURL = import.meta.env.API_BASE_URL;
+axios.defaults.baseURL = "https://mar-booking-api.vercel.app";
 axios.defaults.withCredentials = true;
 
 const App = () => {
