@@ -35,12 +35,7 @@ app.use(cookieParser());
 app.use("/uploads/", express.static(__dirname + "/uploads"));
 
 // give access to particular servers only using CORS.
-app.use(
-  cors({
-    origin: "https://mar-booking-client.vercel.app",
-    credentials: true,
-  })
-);
+app.use(cors());
 
 async function uploadToS3(path, originalname, mimetype) {
   const client = new S3Client({
