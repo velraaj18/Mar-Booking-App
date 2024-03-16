@@ -37,7 +37,7 @@ app.use("/uploads/", express.static(__dirname + "/uploads"));
 // give access to particular servers only using CORS.
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://mar-booking-client.vercel.app"],
+    origin: "https://mar-booking-client.vercel.app",
     credentials: true,
   })
 );
