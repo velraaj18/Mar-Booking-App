@@ -8,7 +8,7 @@ const HomePage = () => {
 
   useEffect(() => {
     axios.get("/place").then(({ data }) => {
-      setPlaces(data);
+      setPlaces([...data, ...data, ...data, ...data]);
     });
   }, []);
 
